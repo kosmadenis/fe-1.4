@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "TT Lakes";
+  src: url("assets/fonts/TTLakes-Regular.woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("assets/fonts/TTLakes-Medium.woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("assets/fonts/TTLakes-DemiBold.woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("assets/fonts/TTLakes-Bold.woff");
+  font-weight: 700;
+}
+
+html,
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+
+  font-family: "TT Lakes";
+  font-size: 16px;
+  color: #1b1c21;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+}
+
+:any-link {
+  text-decoration: none;
+  color: #1b1c21;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 320px;
+  min-height: 100vh;
+  box-shadow: 16px 0 50px 0 rgba(14, 24, 80, 0.2);
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 32px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-header__button {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.sidebar-header__logo {
+  width: 97px;
+  height: 51px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.sidebar-header__button--right {
+  margin-left: auto;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar__links {
+  margin-top: 24px;
+}
+
+.sidebar-links__item {
+  position: relative;
+  display: block;
+  margin-bottom: 32px;
+
+  /* Плавный переход для цвета текста */
+  transition: 200ms;
+}
+
+.sidebar-links__item::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -28px;
+  height: 150%;
+  width: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: #41f6d7;
+
+  /* Плавный переход для бирюзовой штучки слева */
+  transition: 200ms;
+}
+
+.sidebar-links__item:active,
+.sidebar-links__item:hover,
+.sidebar-links__item:focus {
+  color: #7e7e82;
+}
+
+.sidebar-links__item:active::before,
+.sidebar-links__item:hover::before,
+.sidebar-links__item:focus::before {
+  left: -24px;
+}
+
+.sidebar__footer {
+  margin-top: auto;
+}
+
+.sidebar-footer__buttons {
+  display: flex;
+}
+
+.sidebar-footer__button {
+  margin-right: 16px;
+}
+
+.sidebar-footer__email-wrapper {
+  margin-top: 16px;
+}
+
+.sidebar-footer__phone-wrapper {
+  font-size: 24px;
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.sidebar-langs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+}
+
+.sidebar-langs__item {
+  position: relative;
+  margin-right: 7px;
+}
+
+.sidebar-langs__item--current {
+  color: #7e7e82;
+}
+
+/* Общие стили для кнопок в разных частях страницы */
+.round-button {
+  width: 40px;
+  height: 40px;
+}
+
+/* Ссылка у которой при наведении/фокусе/нажатии появится подчеркивание с плавным переходом */
+
+.animated-link {
+  position: relative;
+}
+
+.animated-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+
+  opacity: 0;
+  transform: translateY(5px) scale(0.5);
+  transition: 200ms;
+}
+
+.animated-link:active::before,
+.animated-link:hover::before,
+.animated-link:focus::before {
+  opacity: 1;
+  transform: none;
+}
+
+/* Кнопка которая при наведении/фокусе/нажатии станет темнее,
+   при нажатии станет меньше, с плавным переходом */
+
+.animated-button {
+  transition: 200ms;
+}
+
+.animated-button:active,
+.animated-button:hover,
+.animated-button:focus {
+  filter: contrast(0.8);
+}
+
+.animated-button:active {
+  transform: scale(0.9);
+}
+
+/*  */
+
+.animated-logo {
+  transition: 200ms;
+}
+
+.animated-logo:active,
+.animated-logo:hover,
+.animated-logo:focus {
+  filter: brightness(2) contrast(0.5);
+}
